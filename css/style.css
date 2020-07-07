@@ -1,0 +1,98 @@
+body {
+/* 全体背景色 */
+  background: #AEFFBD;
+}
+#btn {
+/* 幅の広さ */
+  width: 200px;
+/* 幅の高さ */
+  height: 200px;
+/* 背景色 */
+  background-color: red;
+/* 円の書き方 */
+  border-radius: 50%;
+/* 余白 */
+  margin: 30px auto;
+/* 文字の中央寄せ */
+  text-align: center;
+/* 文字の高さ合わせ */
+  line-height: 200px;
+/* 文字の色 */
+  color: whitesmoke;
+/* 文字の太さ */
+  font-weight: bold;
+/* 文字の大きさ */
+  font-size: 42px;
+/* ターゲットにいけば指に変化 */
+  cursor: pointer;
+/* 影を作る（ボタンの動きの準備） */
+  box-shadow: 0 20px rgb(196, 13, 13);
+/* クリックしても変にならない */
+  user-select: none;
+}
+
+#btn:hover {
+/* マウスホバー時に色変化 */
+  opacity: 0.9;
+}
+
+#btn:active {
+/* ボタンクリックの仕掛け（動いたら幅を縮める） */
+  box-shadow: 0 5px rgb(196, 13, 13);
+  margin-top: 25px;
+}
+
+#text {
+  margin-top: 20px;
+  text-align: center;
+  font-size: 30px;
+}
+
+/* この下はアニメーション指定 */
+.container{
+	position:relative;
+	width:100%;
+	height:300px;
+}
+
+/*フォント*/
+.bound span{
+  font-family: Consolas, 'Courier New', Courier, Monaco, monospace;
+	position: absolute;
+	left: 0;
+	right: 0;
+	top:0;
+	bottom: 50px;
+	margin: auto;
+	font-size:5em;
+	font-weight:bold;
+	color:#0091EA;
+	text-align:center;
+	width:100px;
+	height:100px;
+}
+
+
+/*アニメーション指定
+文字数に合わせてleftや開始時間（2つ目のs）を設定する*/
+.bound span:nth-child(1){ left:-5.2em; animation: bound-anim 0.8s 0.0s infinite;}
+.bound span:nth-child(2){ left:-3.3em; animation: bound-anim 0.8s 0.1s infinite;}
+.bound span:nth-child(3){	left:-1.7em; animation: bound-anim 0.8s 0.2s infinite;}
+
+.bound span:nth-child(4){	left: 0.0em; animation: bound-anim 0.8s 0.3s infinite;}
+
+.bound span:nth-child(5){	left: 1.7em; animation: bound-anim 0.8s 0.4s infinite;}
+
+.bound span:nth-child(6){ left: 3.5em; animation: bound-anim 0.8s 0.5s infinite;}
+
+.bound span:nth-child(7){ left: 5.2em; animation: bound-anim 0.8s 0.6s infinite;}
+
+
+/*アニメーションキーフレーム
+小さいフォントサイズの場合はtopの数値も縮小すると飛び過ぎない*/
+@keyframes bound-anim {
+	0%,100% {top: 0;transform: scale(1);}
+	30% {top: -25%;}
+	50% {transform: scale(1);}
+	90% {top: 0;transform: scale(1.2,0.8);}
+}
